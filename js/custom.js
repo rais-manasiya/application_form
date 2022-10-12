@@ -1,7 +1,8 @@
 
  $('#dob').datepicker({
         uiLibrary: 'bootstrap4',
-        format: 'yyyy-mm-dd'
+        format: 'yyyy-mm-dd',
+        maxDate: new Date()
   }).on('change', function(e){
    	var selectedDob = $(this).val();  
 
@@ -12,7 +13,8 @@
 
 $('#editdob').datepicker({
         uiLibrary: 'bootstrap4',
-        format: 'yyyy-mm-dd'
+        format: 'yyyy-mm-dd',
+        maxDate: new Date()
   }).on('change', function(e){
    	var selectedDob = $(this).val();  
 
