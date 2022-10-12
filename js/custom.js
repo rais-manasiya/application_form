@@ -1,5 +1,5 @@
 
- $('.adddob, .editdob').datepicker({
+ $('#dob').datepicker({
         uiLibrary: 'bootstrap4',
         format: 'yyyy-mm-dd'
   }).on('change', function(e){
@@ -10,6 +10,15 @@
     $('.editage').val(age);
   });
 
+$('#editdob').datepicker({
+        uiLibrary: 'bootstrap4',
+        format: 'yyyy-mm-dd'
+  }).on('change', function(e){
+   	var selectedDob = $(this).val();  
+
+   var age =  ageCalculator(selectedDob);
+    $('.editage').val(age);
+  });
 
 $( document ).ready( function () {
 
@@ -23,8 +32,9 @@ $( document ).ready( function () {
 			},
 			mobile: {
 				required: true,
+				digits:true,
 				minlength: 10,
-				maxlength: 13
+				maxlength: 13				
 			},
 			email: {
 				required: true,
@@ -51,8 +61,9 @@ $( document ).ready( function () {
 			},
 			mobile:{
 				required: "Please enter mobile",
-				minlength: "Mobile must consist of at least 10 digit",
-				maxlength: "Mobile must note be more than 13 digit long",
+				digits:"Please enter digit only",
+				minlength: "Mobile must consist of at least 10 digits",
+				maxlength: "Mobile must note be more than 13 digits long"
 			},
 			email: "Please enter a valid email address",
 			fathername: "Please enter mother name",
@@ -126,6 +137,7 @@ $( document ).ready( function () {
 			},
 			mobile: {
 				required: true,
+				digits:true,
 				minlength: 10,
 				maxlength: 13
 			},
@@ -154,8 +166,9 @@ $( document ).ready( function () {
 			},
 			mobile:{
 				required: "Please enter mobile",
-				minlength: "Mobile must consist of at least 10 digit",
-				maxlength: "Mobile must note be more than 13 digit long",
+				minlength: "Mobile must consist of at least 10 digits",
+				digits:"Please enter digit only",
+				maxlength: "Mobile must note be more than 13 digits long",
 			},
 			email: "Please enter a valid email address",
 			fathername: "Please enter mother name",
@@ -199,7 +212,7 @@ $( document ).ready( function () {
 					if(callback==1)
 					{				
 					$('#updateModal').modal('hide');	
-					$('#message').html('<div class="alert alert-success" role="alert"><button type="button" class="close" data-dismiss="alert">&times;</button><strong><strong>Success!</strong> Data inserted successfully</div>');  
+					$('#message').html('<div class="alert alert-success" role="alert"><button type="button" class="close" data-dismiss="alert">&times;</button><strong><strong>Success!</strong> Data updated successfully</div>');  
 					$('#update_application_frm')[0].reset();
 					}
 					else

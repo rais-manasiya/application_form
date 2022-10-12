@@ -43,7 +43,7 @@
 	
 	<!-- Add Modal Start-->
 	
-	<div class="modal fade" id="addModal">
+	<div class="modal fade" id="addModal" data-backdrop="static">
 	  <div class="modal-dialog  modal-lg">
 	  	<form id="application_frm" method="post" action="javascript:void(0)">
 
@@ -165,7 +165,7 @@
 
 <!-- Update Modal Start-->
 	
-	<div class="modal fade" id="updateModal">
+	<div class="modal fade" id="updateModal" data-backdrop="static">
 	  <div class="modal-dialog  modal-lg">
 	  	<form id="update_application_frm" method="post" action="javascript:void(0)">
 
@@ -230,7 +230,7 @@
 					
 					<div class="form-group col-md-6">
 						<label for="dob">DOB*</label>
-						<input id="dob"  class="form-control editdob"  name="dob" placeholder="select date" />
+						<input id="editdob"  class="form-control editdob"  name="dob" placeholder="select date" />
 
 					</div>	
 					<div class="form-group col-md-6">
